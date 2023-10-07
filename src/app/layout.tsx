@@ -1,8 +1,8 @@
 import './globals.css';
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Noto_Sans } from 'next/font/google';
 
-const inter = Inter({ subsets: ['latin'] });
+const notoSans = Noto_Sans({ weight: '300', subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'PotatoTune',
@@ -16,8 +16,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang='en'>
-      <body className={inter.className}>{children}</body>
+    <html lang='en' className={notoSans.className}>
+      <body className='flex flex-col w-full h-screen max-w-screen-2xl mx-auto overflow-auto'>
+        {children}
+      </body>
     </html>
   );
 }
