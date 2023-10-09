@@ -16,7 +16,8 @@ export default function SearchBar({ onSubmit }: props) {
   };
   const handleSubmit = (event: any) => {
     event.preventDefault();
-    onSubmit(event.target[0].value);
+    const youtubeUrl = event.target[0].value;
+    onSubmit(youtubeUrl);
   };
   return (
     <form onSubmit={handleSubmit}>
